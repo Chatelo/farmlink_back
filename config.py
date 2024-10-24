@@ -13,6 +13,14 @@ class Config:
     SECURITY_RECOVERABLE = True
     SECURITY_CHANGEABLE = True
     SECURITY_EMAIL_SENDER = 'chatelobenna@gmail.com'
+    SECURITY_EMAIL_SUBJECT_REGISTER = 'Welcome to FarmLink'
+    SECURITY_POST_LOGIN_VIEW = '/api/profile/farm'
+    SECURITY_POST_REGISTER_VIEW = '/login'
+
+    # Cookie settings
+    REMEMBER_COOKIE_SAMESITE = 'strict' #server side
+    SESSION_COOKIE_SAMESITE = 'strict' # client side
+
 
     # Mail settings
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
