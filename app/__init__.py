@@ -1,6 +1,6 @@
 from flask import Flask
 from config import Config, TestConfig
-from app.extensions import db, security, migrate, ma, mail
+from app.extensions import db, security, migrate, ma, mail 
 from app.models.user import User, Role
 from app.models.order import Order
 from app.models.payment import Payment
