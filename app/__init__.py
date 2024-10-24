@@ -1,5 +1,4 @@
 from flask import Flask
-from flask_mail import Mail
 from config import Config, TestConfig
 from app.extensions import db, security, migrate, ma, mail
 from app.models.user import User, Role
@@ -7,13 +6,10 @@ from app.models.order import Order
 from app.models.payment import Payment
 from flask_security import SQLAlchemyUserDatastore
 
-
+ 
 def create_app(config_name='Config'):
     app = Flask(__name__)
     app.config.from_object('app.Config')
-
-    # Initialize Flask-Mail
-    mail = Mail(app)
     
     # Initialize extensions
     db.init_app(app)
