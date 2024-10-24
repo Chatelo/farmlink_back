@@ -12,7 +12,7 @@ class Config:
     SECURITY_CONFIRMABLE = True
     SECURITY_RECOVERABLE = True
     SECURITY_CHANGEABLE = True
-    SECURITY_EMAIL_SENDER = 'no-reply@farmapp.com'
+    SECURITY_EMAIL_SENDER = 'chatelobenna@gmail.com'
 
 
     # config.py or wherever your config lives
