@@ -19,9 +19,9 @@ def create_app(config_name='Config'):
     # Setup Flask-Security
     user_datastore = SQLAlchemyUserDatastore(db, User, Role)
     security.init_app(app, user_datastore)
-    
+    mail.init_app(app) 
     # Register blueprints
-    from app.api import marketplace, profile, payment
+    from app.api import marketplace, profile, payment 
     app.register_blueprint(marketplace.marketplace_bp)
     app.register_blueprint(profile.profile_bp)
     app.register_blueprint(payment.payment_bp)
