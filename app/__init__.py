@@ -7,12 +7,13 @@ from app.models.payment import Payment
 from flask_security import SQLAlchemyUserDatastore
 
  
-def create_app(config_name='Config'):
+def create_app(config_class=Config):
     app = Flask(__name__)
-    app.config.from_object('app.Config')
+    app.config.from_object(config_class)
     
     # Initialize extensions
     db.init_app(app)
+    mail.init_app(app)
     ma.init_app(app)
     migrate.init_app(app, db)
     
