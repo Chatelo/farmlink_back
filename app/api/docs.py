@@ -27,44 +27,6 @@ swagger_ui_blueprint = get_swaggerui_blueprint(
         }
     ],
     "paths": {
-        "/auth/register": {
-            "post": {
-                "tags": ["Authentication"],
-                "summary": "Register a new user",
-                "requestBody": {
-                    "required": true,
-                    "content": {
-                        "application/json": {
-                            "schema": {
-                                "type": "object",
-                                "properties": {
-                                    "email": {
-                                        "type": "string",
-                                        "format": "email"
-                                    },
-                                    "phone": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string",
-                                        "format": "password"
-                                    }
-                                },
-                                "required": ["email", "phone", "password"]
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "201": {
-                        "description": "User registered successfully"
-                    },
-                    "400": {
-                        "description": "Invalid input"
-                    }
-                }
-            }
-        },
         "/marketplace/products": {
             "post": {
                 "tags": ["Marketplace"],
