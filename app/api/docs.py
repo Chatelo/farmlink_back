@@ -37,7 +37,7 @@ swagger_ui_blueprint = get_swaggerui_blueprint(
                     }
                 ],
                 "requestBody": {
-                    "required": true,
+                    "required": True,
                     "content": {
                         "application/json": {
                             "schema": {
