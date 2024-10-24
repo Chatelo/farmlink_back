@@ -10,3 +10,14 @@ class Farm(db.Model):
     farming_methods = db.Column(db.JSON)
     created_at = db.Column(db.DateTime, default=datetime.utcnow)
     products = db.relationship('Product', backref='farm', lazy='dynamic')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'user_id': self.user_id,
+            'name': self.name,
+            'location': self.location,
+            'size': self.size,
+            'farming_methods': self.farming_methods,
+            'created_at': self.created_at
+        }

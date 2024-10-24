@@ -26,5 +26,8 @@ def create_farm():
 @profile_bp.route('/farm', methods=['GET'])
 @auth_required()
 def get_farm():
-    # Get farm profile code
-    pass
+    farm = Farm.query.filter_by(user_id=current_user.id).first()
+    if farm:
+        return jsonify({'farm': farm.to_dict()}), 200
+    else:
+        return jsonify({'message': 'No farm profile found'}), 404
